@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インクリメンタルサーチ</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <input type="text" placeholder="検索" v-model="search">
+
+    <select v-model="sort">
+      <option value="">ソート無し</option>
+      <option value="asc">昇順</option>
+      <option value="desc">降順</option>
+    </select>
+
+    <transition-group tag="ul">
+      <li v-for="item in sortedList" v-bind:key="item.id">
+        {{ item.text }}
+      </li>
+    </transition-group>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
+</html>
